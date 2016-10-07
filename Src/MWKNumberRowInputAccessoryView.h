@@ -7,12 +7,18 @@
 
 #import <UIKit/UIKit.h>
 
+#ifdef NS_ASSUME_NONNULL_BEGIN
+NS_ASSUME_NONNULL_BEGIN
+#endif
 
 @protocol MWKInputAccessoryViewDelegate <NSObject>
 @required
 - (void)inputAccessory:(UIView*)aInputAccessory didGenerateValue:(id)aValue;
 @end
 
+#ifdef NS_ASSUME_NONNULL_END
+NS_ASSUME_NONNULL_END
+#endif
 
 @protocol MWKInputAccessoryView <NSObject>
 @optional
