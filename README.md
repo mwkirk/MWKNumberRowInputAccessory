@@ -1,5 +1,5 @@
 # MWKNumberRowInputAccessory
-[![GitHub license](https://img.shields.io/badge/license-MIT-lightgrey.svg)](https://raw.githubusercontent.com/mwkirk/MWKNumberRowInputAccessory/master/LICENSE.md) 
+[![GitHub license](https://img.shields.io/badge/license-MIT-lightgrey.svg)](https://github.com/mwkirk/MWKNumberRowInputAccessory/blob/master/LICENSE)
 [![GitHub release](https://img.shields.io/github/release/mwkirk/mwknumberrowinputaccessory.svg)](https://github.com/mwkirk/MWKNumberRowInputAccessory/releases)
 [![Cocoapods Compatible](https://img.shields.io/cocoapods/v/MWKNumberRowInputAccessory.svg)](https://cocoapods.org/pods/MWKNumberRowInputAccessory)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
@@ -17,6 +17,7 @@ Typing something like a street address or calendar entry that requires both numb
 Import the framework's header, adopt the `MWKNumberRowInputAccessory` protocol,
 and declare a property for the number row.
 
+Objective-C:
 ```objective-c
 #import <MWKNumberRowInputAccessory/MWKNumberRowInputAccessory.h>
 
@@ -25,8 +26,22 @@ and declare a property for the number row.
 @end
 ```
 
+Swift:
+```swift
+import MWKNumberRowInputAccessory
+
+class ViewController: UIViewController, MWKInputAccessoryViewDelegate
+{
+    // In Swift, you can initialize the property with a closure
+    let numberRow: MWKInputAccessoryView = {
+        let frame = MWKNumberRowInputAccessoryViewFactory.defaultFramePortrait()
+        return MWKNumberRowInputAccessoryViewFactory.numberRowInputAccessoryView(withFrame: frame, inputViewStyle:UIInputViewStyle.keyboard)
+    } ()
+```
+
 Create the input accessory view and configure it to taste. The factory abstracts away some iOS version-specifics. Assign it to the inputAccessoryView of your UITextField, UITextView, or UISearchBar, and set its delegate.
 
+Objective-C:
 ```objective-c
 - (void)viewDidLoad
 {
@@ -41,8 +56,21 @@ Create the input accessory view and configure it to taste. The factory abstracts
 }
 ```
 
+Swift:
+```swift
+override func viewDidLoad()
+{
+    super.viewDidLoad()
+
+    self.textField.inputAccessoryView = (self.numberRow as! UIView)
+    self.numberRow.delegate = self
+    self.changeKeyboardAppearance(nil)
+}
+```
+
 Implement the single required protcol method in the delegate to capture the input accessory's keystrokes.
 
+Objective-C:
 ```objective-c
 #pragma mark - MWKNumberRowInputAccessoryViewDelegate
 
@@ -54,7 +82,20 @@ Implement the single required protcol method in the delegate to capture the inpu
 }
 ```
 
-Please see the example project and try it out.
+Swift:
+```swift
+// MARK: MWKNumberRowInputAccessoryViewDelegate
+func inputAccessory(_ aInputAccessory: UIView, didGenerateValue aValue: Any)
+{
+    guard let value = aValue as? String else { return; }
+        
+    let currentText: String = self.textField.text!
+    let newText: String = String(format: "%@%@", currentText, value)
+    self.textField.text = newText
+}
+```
+
+Please see the example Swift and Objective-C projects for a test drive.
 
 ##Installation
 ###CocoaPods
@@ -84,7 +125,7 @@ Well, actually, it _should_ still work on iOS 7 and even iOS 6 (the key images a
 
 _"It's an older code, sir, but it checks out."_
 
-I haven't touched this code in ages, but it's held up well from iOS 6 through iOS 10. Hopefully that's a testament to its simplicity and durability.
+I haven't touched this code in ages – other than some minor changes for Swift, but it's held up well from iOS 6 through iOS 10. Hopefully that's a testament to its simplicity and durability.
 
 I wrote this to handle my use cases. There are undoubtedly better ways to do things and features missing _- like landscape support._ Pull requests welcome!
 
