@@ -16,16 +16,12 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)inputAccessory:(UIView*)aInputAccessory didGenerateValue:(id)aValue;
 @end
 
-#ifdef NS_ASSUME_NONNULL_END
-NS_ASSUME_NONNULL_END
-#endif
-
 @protocol MWKInputAccessoryView <NSObject>
 @optional
 - (instancetype)initWithFrame:(CGRect)aFrame inputViewStyle:(UIInputViewStyle)aInputViewStyle;
 - (instancetype)initWithFrame:(CGRect)aFrame;
 @required
-@property (nonatomic, weak) id<MWKInputAccessoryViewDelegate> delegate;
+@property (nonatomic, weak, nullable) id<MWKInputAccessoryViewDelegate> delegate;
 @property (nonatomic, assign) UIKeyboardAppearance keyboardAppearance;
 - (void)showKeys;
 - (void)hideKeys;
@@ -38,6 +34,9 @@ NS_ASSUME_NONNULL_END
 + (CGRect)defaultFramePortrait;
 @end
 
+#ifdef NS_ASSUME_NONNULL_END
+NS_ASSUME_NONNULL_END
+#endif
 
 
 // iOS 7+
