@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="FuX-ok-A4g">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="8jt-nr-TZY">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dLG-I1-rNU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="FuX-ok-A4g" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="1wk-eP-Lnj"/>
+                        <viewControllerLayoutGuide type="bottom" id="ghf-rk-spO"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="L1m-IO-vjo">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="4lF-MI-rDt">
+                                <rect key="frame" x="20" y="44" width="560" height="30"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dark Keyboard Appearance" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hCQ-Ue-GHh">
+                                <rect key="frame" x="20" y="98" width="199" height="20"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="V66-sj-Bl7">
+                                <rect key="frame" x="531" y="93" width="51" height="31"/>
+                                <connections>
+                                    <action selector="changeKeyboardAppearance:" destination="FuX-ok-A4g" eventType="valueChanged" id="hnu-U6-Tdm"/>
+                                </connections>
+                            </switch>
+                        </subviews>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="4lF-MI-rDt" secondAttribute="trailing" id="80E-fp-kGy"/>
+                            <constraint firstItem="hCQ-Ue-GHh" firstAttribute="top" secondItem="4lF-MI-rDt" secondAttribute="bottom" constant="24" id="Ews-If-WZa"/>
+                            <constraint firstItem="4lF-MI-rDt" firstAttribute="leading" secondItem="L1m-IO-vjo" secondAttribute="leadingMargin" id="JEY-VN-Bhd"/>
+                            <constraint firstItem="4lF-MI-rDt" firstAttribute="top" secondItem="1wk-eP-Lnj" secondAttribute="bottom" constant="24" id="MWf-rg-LW7"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="V66-sj-Bl7" secondAttribute="trailing" id="gVe-bQ-DC6"/>
+                            <constraint firstItem="V66-sj-Bl7" firstAttribute="centerY" secondItem="hCQ-Ue-GHh" secondAttribute="centerY" id="nBu-Ul-BJd"/>
+                            <constraint firstItem="hCQ-Ue-GHh" firstAttribute="leading" secondItem="L1m-IO-vjo" secondAttribute="leadingMargin" id="xZo-gS-Gvx"/>
+                            <constraint firstItem="V66-sj-Bl7" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="hCQ-Ue-GHh" secondAttribute="trailing" constant="8" id="xpl-eI-Fz6"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="keyboardAppearanceSwitch" destination="V66-sj-Bl7" id="2Fp-1E-Yc0"/>
+                        <outlet property="textField" destination="4lF-MI-rDt" id="lIu-f0-KpZ"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="498" y="557"/>
+        </scene>
+    </scenes>
+</document>
