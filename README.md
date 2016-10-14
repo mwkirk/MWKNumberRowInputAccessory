@@ -4,7 +4,7 @@
 [![Cocoapods Compatible](https://img.shields.io/cocoapods/v/MWKNumberRowInputAccessory.svg)](https://cocoapods.org/pods/MWKNumberRowInputAccessory)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 
-MWKNumberRowInputAccessory is an iOS input accessory view that adds a persistent number row with native look and feel to the keyboard.
+MWKNumberRowInputAccessory is an iOS input accessory view that adds a persistent number row with a native look and feel to the keyboard. You can see it in use in the [Ziptrip app](https://ziptripapp.com).
 
 Typing something like a street address or calendar entry that requires both numbers and letters is far less tedious when they're both _right there._ You love your users. Give them a persistent number row on their keyboard, and make them smile at your thoughtfulness.
 
