@@ -97,22 +97,22 @@ func inputAccessory(_ aInputAccessory: UIView, didGenerateValue aValue: Any)
 
 Please see the example Swift and Objective-C projects for a test drive.
 
-##Installation
-###CocoaPods
+## Installation
+### CocoaPods
 You can install MWKNumberRowInputAccessory in your project with [CocoaPods](https://github.com/cocoapods/cocoapods) by adding this to your `Podfile`:
 
 ```Ruby
 pod 'MWKNumberRowInputAccessory', '~> 1.0.0'
 ```
 
-###Carthage
+### Carthage
 MWKNumberRowInputAccessory also supports [Carthage](https://github.com/Carthage/Carthage). Specify it in your `Cartfile` like this:
 
 ```
 github "mwkirk/MWKNumberRowInputAccessory" ~> 1.0
 ```
 
-###Manually
+### Manually
 Since MWKNumberRowInputAccessory is just a few files, it's simple to integrate it into your project manually.
 
 ## Requirements
